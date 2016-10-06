@@ -102,17 +102,19 @@ module Alfred
 
   class Mod
     JSON.mapping(
-      valid: Bool | Nil,
+      valid: Bool,
       arg: String,
       subtitle: String | Nil,
     )
 
     def initialize
       @arg = ""
+      @valid = true
     end
 
     def initialize(&block)
       @arg = ""
+      @valid = true
       yield self
     end
   end
