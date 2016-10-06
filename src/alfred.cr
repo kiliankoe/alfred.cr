@@ -28,14 +28,15 @@ module Alfred
   end
 
   def self.error(err : String)
-    item = Item.new
-    item.title = "Error: #{err}"
-    item.subtitle = "Press ⌘L to see the full error and ⌘C to copy it."
+    item = Item.new do |i|
+      i.title = "Error: #{err}"
+      i.subtitle = "Press ⌘L to see the full error and ⌘C to copy it."
 
-    text = Text.new
-    text.copy = err
-    text.largetype = err
-    item.text = text
+      i.text = Text.new do |t|
+        t.copy = err
+        t.largetype = err
+      end
+    end
 
     output item
   end
