@@ -38,7 +38,7 @@ describe "Alfred#generate_json" do
 
   it "should return correct JSON for item with type" do
     item = Alfred::Item.new do |i|
-      i.type = Alfred::Type::File.to_s
+      i.type = Alfred::ItemType::File.to_s
     end
     json = "{\"items\":[{\"title\":\"\",\"type\":\"file\"}]}"
     Alfred.generate_json(item).should eq(json)

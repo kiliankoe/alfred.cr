@@ -36,18 +36,18 @@ module Alfred
     end
   end
 
-  enum Type
+  enum ItemType
     Default
     File
     FileSkipCheck
 
     def to_s
       case self
-      when Type::Default
+      when Default
         "default"
-      when Type::File
+      when File
         "file"
-      when Type::FileSkipCheck
+      when FileSkipCheck
         "file:skipcheck"
       end
     end
