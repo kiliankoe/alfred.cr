@@ -44,7 +44,7 @@ module Alfred
   end
 
   def self.debug : Bool
-    ENV.has_key?("debug")
+    ENV.has_key?("alfred_debug")
   end
 
   # Helper overload for single items
