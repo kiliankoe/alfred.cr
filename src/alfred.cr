@@ -36,6 +36,8 @@ module Alfred
         t.copy = err
         t.largetype = err
       end
+
+      # TODO: add error icon
     end
 
     output item
