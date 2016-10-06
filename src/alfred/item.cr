@@ -25,12 +25,12 @@ module Alfred
       yield self
     end
 
-    def add_mod(key : String, mod : Mod)
+    def add_mod(key : ModKey, mod : Mod)
       mods = @mods
       if mods.nil?
-        mods = {key => mod}
+        mods = {key.to_s => mod}
       else
-        mods[key] = mod
+        mods[key.to_s] = mod
       end
       @mods = mods
     end

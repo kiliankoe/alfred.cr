@@ -29,8 +29,8 @@ describe "Alfred#generate_json" do
 
   it "should return correct JSON for item with modifiers" do
     item = Alfred::Item.new do |i|
-      i.add_mod Alfred::ModKey::CMD.to_s, Alfred::Mod.new { |mod| mod.arg = "mod arg cmd" }
-      i.add_mod Alfred::ModKey::ALT.to_s, Alfred::Mod.new { |mod| mod.arg = "mod arg alt" }
+      i.add_mod Alfred::ModKey::CMD, Alfred::Mod.new { |mod| mod.arg = "mod arg cmd" }
+      i.add_mod Alfred::ModKey::ALT, Alfred::Mod.new { |mod| mod.arg = "mod arg alt" }
     end
     json = "{\"items\":[{\"title\":\"\",\"mods\":{\"cmd\":{\"valid\":true,\"arg\":\"mod arg cmd\"},\"alt\":{\"valid\":true,\"arg\":\"mod arg alt\"}}}]}"
     Alfred.generate_json(item).should eq(json)
