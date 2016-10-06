@@ -92,11 +92,3 @@ describe "Alfred#debug" do
     ENV.delete("debug") # just in case
   end
 end
-
-# describe "Alfred#fetch" do
-#   it "should return the body of the page" do
-#     url = "https://httpbin.org/robots.txt"
-#     response = "User-agent: *\nDisallow: /deny\n"
-#     Alfred.fetch(url).should eq(response)
-#   end
-# end

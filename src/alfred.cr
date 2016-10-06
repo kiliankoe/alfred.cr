@@ -23,10 +23,6 @@ module Alfred
     puts generate_json items
   end
 
-  def self.log(text : String)
-    puts text if debug
-  end
-
   def self.error(err : String)
     item = Item.new do |i|
       i.title = "Error: #{err}"
@@ -43,9 +39,8 @@ module Alfred
     output item
   end
 
-  def self.fetch(url : String)
-    response = HTTP::Client.get url
-    response.body
+  def self.log(text : String)
+    puts text if debug
   end
 
   def self.debug : Bool
