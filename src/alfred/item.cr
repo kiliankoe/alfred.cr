@@ -67,6 +67,22 @@ module Alfred
     end
   end
 
+  enum IconType
+    File
+    FileIcon
+    FileType
+
+    def to_s
+      # File omitted on purpose, as that should result in nil
+      case self
+      when FileIcon
+        "fileicon"
+      when FileType
+        "filetype"
+      end
+    end
+  end
+
   enum Type
     Default
     File
